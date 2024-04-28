@@ -151,6 +151,18 @@ def generate(rm: ResourceManager):
         rm.crafting_shaped('crafting/wood/%s_wood' % wood, ['XX', 'XX'], {'X': item('log')}, (3, item('wood'))).with_advancement(item('log'))
         rm.crafting_shapeless('crafting/wood/%s_chest_minecart' % wood, (item('chest'), 'minecraft:minecart'), item('chest_minecart'))
 
+        rm.crafting_shaped('crafting/wood/%s_shelf' % wood, ['XXX', 'Y Y', 'Z Z'], {'X': item('planks'), 'Y': item('lumber'), 'Z': '#forge:rods/wooden'}, (2, item('jar_shelf'))).with_advancement(item('lumber'))
+        rm.crafting_shaped('crafting/wood/%s_axle' % wood, ['WGW'], {'G': 'tfc:glue', 'W': item('stripped_log')}, (4, item('axle'))).with_advancement(item('lumber'))
+        rm.crafting_shapeless('crafting/wood/%s_bladed_axle' % wood, (item('axle'), '#forge:ingots/steel'), item('bladed_axle')).with_advancement(item('axle'))
+        rm.crafting_shaped('crafting/wood/%s_encased_axle' % wood, [' L ', 'WAW', ' L '], {'L': item('stripped_log'), 'W': item('lumber'), 'A': item('axle')}, (4, item('encased_axle'))).with_advancement(item('lumber'))
+        rm.crafting_shaped('crafting/wood/%s_gear_box' % wood, [' L ', 'LML', ' L '], {'L': item('lumber'), 'M': 'tfc:brass_mechanisms'}, (2, item('gear_box'))).with_advancement(item('lumber'))
+        rm.crafting_shaped('crafting/wood/%s_clutch' % wood, ['LSL', 'MAR', 'LSL'], {'L': item('lumber'), 'S': item('stripped_log'), 'M': 'tfc:brass_mechanisms', 'A': item('axle'), 'R': '#forge:dusts/redstone'}, (2, item('clutch'))).with_advancement(item('lumber'))
+        rm.crafting_shaped('crafting/wood/%s_water_wheel' % wood, ['LPL', 'PAP', 'LPL'], {'L': item('lumber'), 'P': item('planks'), 'A': item('axle')}, item('water_wheel')).with_advancement(item('lumber'))
+
+        for metal, metal_data in METALS.items():
+            if 'utility' in metal_data.types:
+                rm.crafting_shaped('crafting/wood/hanging_sign/%s/%s' % (metal, wood), ['X X', 'YYY', 'YYY'], {'X': 'tfc:metal/chain/%s' % metal, 'Y': item('lumber')}, (3, 'afc:wood/hanging_sign/%s/%s' % (metal, wood))).with_advancement('tfc:metal/chain/%s' % metal)
+
         # Commented out because must be rewritten to write this stuff to the override pack
         # rm.crafting_shaped('crafting/wood/%s_hanger' % wood, ['XXX', ' Y ', ' Y ', ], {'X': 'afc:wood/planks/%s' % wood, 'Y': '#forge:string'}, 'afc:wood/hanger/%s' % wood).with_advancement('afc:wood/lumber/%s' % wood)
         # rm.crafting_shaped('crafting/wood/%s_shelf' % wood, ['XXX', 'YYY', 'XXX'], {'X': 'afc:wood/planks/%s' % wood, 'Y': 'afc:wood/lumber/%s' % wood}, 'afc:wood/food_shelf/%s' % wood).with_advancement('afc:wood/lumber/%s' % wood)

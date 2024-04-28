@@ -67,6 +67,9 @@ dependencies {
     // Only use FirmaLife at runtime
     runtimeOnly(fg.deobf("curse.maven:firmalife-453394:${firmalife_version}"))
 
+    // JEI
+    runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
+
 }
 
 processResources {
