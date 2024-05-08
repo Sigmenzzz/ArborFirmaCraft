@@ -329,7 +329,7 @@ def generate(rm: ResourceManager):
         block.with_item_model().with_lang(lang("%s scribing table" % wood)).with_block_loot('afc:wood/scribing_table/%s' % wood).with_tag('minecraft:mineable/axe')
         # Sewing Table
         block = rm.blockstate('wood/sewing_table/%s' % wood, variants=four_rotations('afc:block/wood/sewing_table/%s' % wood, (90, None, 180, 270))).with_item_model()
-        rm.block_model(('wood', 'sewing_table', wood), {'0': 'afc:block/wood/log/%s' % wood, '1': 'afc:block/wood/planks/%s' % wood}, 'afc:block/sewing_table')
+        rm.block_model(('wood', 'sewing_table', wood), {'0': 'afc:block/wood/log/%s' % wood, '1': 'afc:block/wood/planks/%s' % wood}, 'tfc:block/sewing_table')
         block.with_lang(lang('%s sewing table', wood)).with_block_loot('afc:wood/sewing_table/%s' % wood)
 
         # Jar shelf

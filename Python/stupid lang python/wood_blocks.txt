@@ -12,6 +12,7 @@ sluice
 barrel
 lectern
 scribing_table
+sewing_table
 axle
 bladed_axle
 clutch
