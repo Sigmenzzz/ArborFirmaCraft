@@ -84,6 +84,8 @@ def generate(rm: ResourceManager):
         block_and_item_tag(rm, 'tfc:barrels', item('barrel'))
         block_and_item_tag(rm, 'tfc:fallen_leaves', item('fallen_leaves'))
         block_and_item_tag(rm, 'tfc:tool_racks', plank('tool_rack'))
+        rm.block_and_item_tag('sewing_tables', item('sewing_table'))
+        rm.block_and_item_tag('jar_shelves', item('jar_shelf'))
 
         rm.item_tag('minecraft:boats', item('boat'))
         block_and_item_tag(rm, 'minecraft:wooden_buttons', plank('button'))
@@ -130,6 +132,7 @@ def generate(rm: ResourceManager):
         def item(_variant: str) -> str:
             return 'afc:wood/%s/%s' % (_variant, wood)
         block_and_item_tag(rm, 'minecraft:logs', '#afc:%s_logs' % wood)
+        block_and_item_tag(rm, 'tfc:twigs', item('twig'))
 
 
 
@@ -168,7 +171,7 @@ def generate(rm: ResourceManager):
 
 
     rm.block_tag('minecraft:mineable/axe', *[
-        *['afc:wood/%s/%s' % (variant, wood) for variant in ('log', 'stripped_log', 'wood', 'stripped_wood', 'planks', 'twig', 'vertical_support', 'horizontal_support', 'sluice', 'chest', 'trapped_chest', 'barrel', 'lectern', 'scribing_table', 'jar_shelf', 'axle', 'encased_axle', 'bladed_axle', 'clutch', 'gear_box', 'windmill', 'water_wheel') for wood in WOODS.keys()],
+        *['afc:wood/%s/%s' % (variant, wood) for variant in ('log', 'stripped_log', 'wood', 'stripped_wood', 'planks', 'twig', 'vertical_support', 'horizontal_support', 'sluice', 'chest', 'trapped_chest', 'barrel', 'lectern', 'scribing_table', 'sewing_table', 'jar_shelf', 'axle', 'encased_axle', 'bladed_axle', 'clutch', 'gear_box', 'windmill', 'water_wheel') for wood in WOODS.keys()],
         *['afc:wood/planks/%s_%s' % (wood, variant) for variant in ('bookshelf', 'door', 'trapdoor', 'fence', 'log_fence', 'fence_gate', 'button', 'pressure_plate', 'slab', 'stairs', 'tool_rack', 'workbench', 'sign') for wood in WOODS.keys()]
     ])
     rm.block_tag('tfc:mineable_with_sharp_tool', *[
