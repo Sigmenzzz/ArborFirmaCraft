@@ -123,6 +123,9 @@ def generate(rm: ResourceManager):
 
         log_tag = '#afc:%s_logs' % wood
 
+        damage_shapeless(rm, 'crafting/wood/%s_lumber_planks' % wood, (item('planks'), '#tfc:saws'), (4, item('lumber'))).with_advancement(item('planks'))
+        damage_shapeless(rm, 'crafting/wood/%s_stairs_undo' % wood, (plank('stairs'), '#tfc:saws'), (3, item('lumber'))).with_advancement(plank('stairs'))
+        damage_shapeless(rm, 'crafting/wood/%s_slab_undo' % wood, (plank('slab'), '#tfc:saws'), (2, item('lumber'))).with_advancement(plank('slab'))
         rm.crafting_shaped('crafting/wood/%s_bookshelf' % wood, ['XXX', 'YYY', 'XXX'], {'X': item('lumber'), 'Y': '#forge:rods/wooden'}, plank('bookshelf')).with_advancement(item('lumber'))
         rm.crafting_shapeless('crafting/wood/%s_button' % wood, item('planks'), plank('button')).with_advancement(item('planks'))
         rm.crafting_shaped('crafting/wood/%s_door' % wood, ['XX', 'XX', 'XX'], {'X': item('lumber')}, (2, plank('door'))).with_advancement(item('lumber'))
