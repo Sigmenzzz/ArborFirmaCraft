@@ -171,6 +171,12 @@ def generate(rm: ResourceManager):
         # rm.crafting_shaped('crafting/wood/%s_hanger' % wood, ['XXX', ' Y ', ' Y ', ], {'X': 'afc:wood/planks/%s' % wood, 'Y': '#forge:string'}, 'afc:wood/hanger/%s' % wood).with_advancement('afc:wood/lumber/%s' % wood)
         # rm.crafting_shaped('crafting/wood/%s_shelf' % wood, ['XXX', 'YYY', 'XXX'], {'X': 'afc:wood/planks/%s' % wood, 'Y': 'afc:wood/lumber/%s' % wood}, 'afc:wood/food_shelf/%s' % wood).with_advancement('afc:wood/lumber/%s' % wood)
         # rm.crafting_shaped('crafting/wood/%s_jarbnet' % wood, ['X  ', 'ZYY', 'X  '], {'X': 'afc:wood/log/%s' % wood, 'Y': 'afc:wood/lumber/%s' % wood, 'Z': '#forge:rods/brass'}, '2 afc:wood/jarbnet/%s' % wood).with_advancement('afc:wood/lumber/%s' % wood)
+        rm.crafting_shaped('crafting/wood/%s_wine_shelf' % wood, ['XYX', 'XYX', 'XYX'], {'X': 'afc:wood/log/%s' % wood, 'Y': 'firmalife:treated_lumber'}, '4 firmalife:wood/wine_shelf/%s' % wood).with_advancement('tfc:wood/log/%s' % wood)
+        damage_shapeless(rm, 'crafting/wood/%s_stomping_barrel' % wood, ('#tfc:saws', 'afc:wood/barrel/%s' % wood), 'firmalife:wood/stomping_barrel/%s' % wood).with_advancement('tfc:wood/barrel/%s' % wood)
+        rm.crafting_shapeless('crafting/wood/%s_barrel_press' % wood, ('firmalife:wood/stomping_barrel/%s' % wood, '#forge:rods/wrought_iron', '#forge:sheets/wrought_iron', 'tfc:brass_mechanisms'), 'firmalife:wood/barrel_press/%s' % wood).with_advancement('firmalife:wood/stomping_barrel/%s' % wood)
+        rm.crafting_shaped('crafting/wood/%s_keg' % wood, ['XYX', 'YZY', 'XYX'], {'X': 'afc:wood/log/%s' % wood, 'Y': 'firmalife:barrel_stave', 'Z': 'tfc:glue'}, 'firmalife:wood/big_barrel/%s' % wood).with_advancement('tfc:wood/log/%s' % wood)
+
+
     #
     # for soil in SOIL_BLOCK_VARIANTS:
     #     craft_decorations('crafting/soil/%s_mud_bricks' % soil, 'tfc:mud_bricks/%s' % soil)

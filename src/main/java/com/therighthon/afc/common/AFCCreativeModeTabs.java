@@ -91,6 +91,10 @@ public final class AFCCreativeModeTabs
                 accept(out, FLCompatBlocks.FOOD_SHELVES, wood);
                 accept(out, FLCompatBlocks.HANGERS, wood);
                 accept(out, FLCompatBlocks.JARBNETS, wood);
+                accept(out, FLCompatBlocks.BIG_BARRELS, wood);
+                accept(out, FLCompatBlocks.STOMPING_BARRELS, wood);
+                accept(out, FLCompatBlocks.BARREL_PRESSES, wood);
+                accept(out, FLCompatBlocks.WINE_SHELVES, wood);
             }
         }
 
