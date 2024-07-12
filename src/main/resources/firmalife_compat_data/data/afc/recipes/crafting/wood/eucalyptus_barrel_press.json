@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "firmalife:wood/stomping_barrel/eucalyptus"
+      "item": "afc:wood/stomping_barrel/eucalyptus"
     },
     {
       "tag": "forge:rods/wrought_iron"
@@ -16,6 +16,6 @@
     }
   ],
   "result": {
-    "item": "firmalife:wood/barrel_press/eucalyptus"
+    "item": "afc:wood/barrel_press/eucalyptus"
   }
 }
