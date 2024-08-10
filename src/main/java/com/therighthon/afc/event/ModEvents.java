@@ -47,7 +47,6 @@ public class ModEvents
 
         bus.addListener(ModEvents::onFLCompatPackFinder);
         bus.addListener(ModEvents::onFLCompatDataPackFinder);
-
     }
 
     private static void setup(FMLCommonSetupEvent event)
